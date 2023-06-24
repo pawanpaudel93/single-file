@@ -11,7 +11,7 @@ test('Single File', async() => {
     await promises.rm(outputDirectory, { recursive: true, force: true })
     await promises.mkdir(outputDirectory)
     const chromePath = join(homedir(), '.cache', 'puppeteer')
-    const { executablePath } = await findChrome({
+    const { executablePath: browserExecutablePath } = await findChrome({
       download: {
         puppeteer: { BrowserFetcher },
         path: chromePath,
@@ -20,9 +20,8 @@ test('Single File', async() => {
     })
     await saveSingleFile({
         url: 'https://arweave.org/',
-        browserExecutablePath: executablePath,
-        output: `${outputDirectory}/index.html`,
-        basePath: outputDirectory,
+        browserExecutablePath,
+        outputDirectory,
         saveScreenshot: true
     })
     const files = await promises.readdir(outputDirectory)

@@ -30,7 +30,6 @@ export const defaultArgs = {
     document: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
   },
   backEnd: 'puppeteer', // Back-end to use (choices: "jsdom", "puppeteer", "webdriver-chromium", "webdriver-gecko", "puppeteer-firefox", "playwright-firefox", "playwright-chromium", "playwright-webkit")
-  basePath: '', // Base path for storing html, screenshot, and metadata
   saveScreenshot: false, // Save screenshot or not
   blockMixedContent: false, // Block mixed contents
   browserServer: '', // Server to connect to (puppeteer only for now)
@@ -70,7 +69,8 @@ export const defaultArgs = {
   maxResourceSizeEnabled: false, // Enable removal of embedded resources exceeding a given size
   maxResourceSize: 10, // Maximum size of embedded resources in MB (images, stylesheets, scripts, and iframes)
   moveStylesInHead: false, // Move style elements outside the head element into the head element
-  outputDirectory: '', // Path to where to save files, this path must exist
+  output: 'index.html', // Custom filename for html file
+  outputDirectory: '', // Path to where to save files (html, screenshot, and metadata), this path must exist
   removeHiddenElements: true, // Remove HTML elements that are not displayed
   removeUnusedStyles: true, // Remove unused CSS rules and unneeded declarations
   removeUnusedFonts: true, // Remove unused CSS font rules

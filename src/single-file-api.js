@@ -31,7 +31,6 @@ import {initialize as puppeteerInitialize, closeBrowser, getPageData} from "./ba
 export const VALID_URL_TEST = /^(https?|file):\/\//;
 
 export const DEFAULT_OPTIONS = {
-	basePath: "",
 	removeHiddenElements: true,
 	removeUnusedStyles: true,
 	removeUnusedFonts: true,

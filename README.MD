@@ -60,8 +60,7 @@ const main = async () => {
   await saveSingleFile({
       url: 'https://arweave.org/',
       browserExecutablePath: executablePath,
-      output: `${outputDirectory}/index.html`,
-      basePath: outputDirectory,
+      outputDirectory: outputDirectory,
       saveScreenshot: true
   })
   const files = await promises.readdir(outputDirectory)
