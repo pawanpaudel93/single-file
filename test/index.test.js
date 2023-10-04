@@ -22,7 +22,9 @@ test('Single File', async() => {
         url: 'https://arweave.org/',
         browserExecutablePath,
         outputDirectory,
-        saveScreenshot: true
+        saveScreenshot: true,
+        outputScreenshotFilename: "myscreenshot.png",
+        outputHtmlFilename: "my.html",
     })
     const files = await promises.readdir(outputDirectory)
     await promises.rm(outputDirectory, { recursive: true, force: true })

@@ -241,8 +241,8 @@ async function capturePage(options) {
 		if (options.includeInfobar) {
 			await includeInfobarScript(pageData);
 		}
-		if (options.output) {
-			filename = getFilename(options.output, options);
+		if (options.outputHtmlFilename) {
+			filename = getFilename(options.outputHtmlFilename, options);
 		} else if (options.dumpContent) {
 			console.log(pageData.content); // eslint-disable-line no-console
 		} else {

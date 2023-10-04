@@ -69,7 +69,8 @@ export const defaultArgs = {
   maxResourceSizeEnabled: false, // Enable removal of embedded resources exceeding a given size
   maxResourceSize: 10, // Maximum size of embedded resources in MB (images, stylesheets, scripts, and iframes)
   moveStylesInHead: false, // Move style elements outside the head element into the head element
-  output: 'index.html', // Custom filename for html file
+  outputHtmlFilename: "index.html", // Custom filename for html file
+  outputScreenshotFilename: "screenshot.png", // Custom filename for screenshot
   outputDirectory: '', // Path to where to save files (html, screenshot, and metadata), this path must exist
   removeHiddenElements: true, // Remove HTML elements that are not displayed
   removeUnusedStyles: true, // Remove unused CSS rules and unneeded declarations

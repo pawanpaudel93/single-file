@@ -154,7 +154,7 @@ async function getPageDataInternal(context, page, options) {
 		}
 		if (options.outputDirectory) {
 			if (options.saveScreenshot) {
-				await page.screenshot({ path: path.join(options.outputDirectory, "screenshot.png") });
+				await page.screenshot({ path: path.join(options.outputDirectory, options.outputScreenshotFilename) });
 			}
 			const title = await page.title();
 			await fsPromises.writeFile(path.join(options.outputDirectory, "metadata.json"), JSON.stringify({ title, url: options.url }, null, 2));
@@ -167,7 +167,7 @@ async function getPageDataInternal(context, page, options) {
 			const pageData = await handleJSRedirect(context, options);
 			if (options.outputDirectory) {
 				if (options.saveScreenshot) {
-					await page.screenshot({ path: path.join(options.outputDirectory, "screenshot.png") });
+					await page.screenshot({ path: path.join(options.outputDirectory, options.outputScreenshotFilename) });
 				}
 				const title = await page.title();
 				await fsPromises.writeFile(path.join(options.outputDirectory, "metadata.json"), JSON.stringify({ title, url: options.url }, null, 2));
